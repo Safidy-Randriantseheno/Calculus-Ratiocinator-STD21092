@@ -5,6 +5,6 @@ public final class Fausse extends Affirmation{
         super(et, ou, donc);
     }
     public boolean evaluer(){
-        return true;
+        return false;
     }
 }
