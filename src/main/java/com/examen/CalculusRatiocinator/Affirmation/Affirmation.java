@@ -1,7 +1,8 @@
 package com.examen.CalculusRatiocinator.Affirmation;
 
-import java.io.ObjectInputFilter;
+import lombok.Data;
 
+@Data
 public sealed abstract class Affirmation permits Vraie , Fausse{
     protected final String et;
     protected final  String ou;
@@ -9,5 +10,9 @@ public sealed abstract class Affirmation permits Vraie , Fausse{
 
     protected Status status;
 
-
+    protected Affirmation(String et, String ou, String donc) {
+        this.et = et;
+        this.ou = ou;
+        this.donc = donc;
+    }
 }
