@@ -42,4 +42,20 @@ public class CalculusRatiocinatorTest {
         assertEquals("faux",AffirmationEvaluator.evaluerAffirmation(affirmationCompose2));
 
     }
+
+    @Test
+    public void testLouEstBeauOuLouEstGénéreuxDoncLouEstPauvreEtLouEstPauvreOuLouEstGénéreux(){
+        Affirmation affirmationLouEstBeau = new Vraie();
+        Affirmation affirmationLouEstGénéreux = new Vraie();
+        Affirmation affirmationLouEstPauvre = new Fausse();
+
+        Affirmation affirmationCompose1 = new Composee(affirmationLouEstBeau,affirmationLouEstGénéreux, Conjonction.ou);
+        Affirmation affirmationCompose2 = new Composee(affirmationCompose1,affirmationLouEstPauvre, Conjonction.donc);
+        Affirmation affirmationCompose3 = new Composee(affirmationLouEstPauvre,affirmationLouEstGénéreux, Conjonction.ou);
+
+        Affirmation affirmation1 = new Composee(affirmationCompose2,affirmationCompose3,Conjonction.et);
+
+        assertEquals("faux", AffirmationEvaluator.evaluerAffirmation(affirmation1));
+
+    }
 }
