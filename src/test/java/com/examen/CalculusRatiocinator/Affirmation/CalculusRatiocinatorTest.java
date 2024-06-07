@@ -12,5 +12,13 @@ public class CalculusRatiocinatorTest {
         Affirmation affirmationLouEstBeau = new Vraie();
         assertEquals("vrai", AffirmationEvaluator.evaluerAffirmation(affirmationLouEstBeau));
     }
+    @Test
+    public void testLouEstBeauDoncLouEstPauvre() {
+        Affirmation affirmationLouEstBeau = new Vraie();
+        Affirmation affirmationLouEstPauvre = new Fausse();
 
+        Affirmation affirmationComposee = new Composee(affirmationLouEstBeau, affirmationLouEstPauvre, Conjonction.donc);
+
+        assertEquals("faux", AffirmationEvaluator.evaluerAffirmation(affirmationComposee));
+    }
 }
