@@ -29,4 +29,17 @@ public class CalculusRatiocinatorTest {
         Affirmation affirmationCompose = new Composee(affirmationLouEstPauvre,affirmationLouEstGénéreux, Conjonction.donc);
         assertEquals("vraie", AffirmationEvaluator.evaluerAffirmation(affirmationCompose));
     }
+
+    @Test
+    public void testLouEstBeauOuLouEstGénéreuxDoncLouEstPauvre(){
+        Affirmation affirmationLouEstBeau = new Vraie();
+        Affirmation affirmationLouEstGénéreux = new Vraie();
+        Affirmation affirmationLouEstPauvre = new Fausse();
+
+        Affirmation affirmationCompose1 = new Composee(affirmationLouEstBeau,affirmationLouEstGénéreux, Conjonction.ou);
+        Affirmation affirmationCompose2 = new Composee(affirmationCompose1,affirmationLouEstPauvre, Conjonction.donc);
+
+        assertEquals("faux",AffirmationEvaluator.evaluerAffirmation(affirmationCompose2));
+
+    }
 }
