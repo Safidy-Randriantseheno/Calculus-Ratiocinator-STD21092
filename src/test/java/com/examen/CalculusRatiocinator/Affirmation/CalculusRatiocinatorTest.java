@@ -10,7 +10,7 @@ public class CalculusRatiocinatorTest {
     @Test
     public void testLouEstBeauEstVraie() {
         Affirmation affirmationLouEstBeau = new Vraie();
-        assertEquals("vrai", AffirmationEvaluator.evaluerAffirmation(affirmationLouEstBeau));
+        assertEquals("vraie", AffirmationEvaluator.evaluerAffirmation(affirmationLouEstBeau));
     }
     @Test
     public void testLouEstBeauDoncLouEstPauvre() {
@@ -27,6 +27,6 @@ public class CalculusRatiocinatorTest {
         Affirmation affirmationLouEstGénéreux = new Vraie();
 
         Affirmation affirmationCompose = new Composee(affirmationLouEstPauvre,affirmationLouEstGénéreux, Conjonction.donc);
-        assertEquals("vrai", AffirmationEvaluator.evaluerAffirmation(affirmationCompose));
+        assertEquals("vraie", AffirmationEvaluator.evaluerAffirmation(affirmationCompose));
     }
 }
