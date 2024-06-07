@@ -15,4 +15,6 @@ public sealed abstract class Affirmation permits Composee, Fausse, Vraie {
         this.ou = ou;
         this.donc = donc;
     }
+
+    public abstract boolean evaluer();
 }
