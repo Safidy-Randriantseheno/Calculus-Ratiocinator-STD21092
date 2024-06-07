@@ -3,7 +3,7 @@ package com.examen.CalculusRatiocinator.Affirmation;
 import lombok.Data;
 
 @Data
-public sealed abstract class Affirmation permits Vraie , Fausse{
+public sealed abstract class Affirmation permits Composee, Fausse, Vraie {
     protected final String et;
     protected final  String ou;
     protected final String donc;
